@@ -10,12 +10,17 @@ import os
 from time import sleep
 
 ULTROID = r"""
-  _    _ _ _             _     _
- | |  | | | |           (_)   | |
- | |  | | | |_ _ __ ___  _  __| |
- | |  | | | __| '__/ _ \| |/ _  |
- | |__| | | |_| | | (_) | | (_| |
-  \____/|_|\__|_|  \___/|_|\__,_|
+                                                                                          
+88b           d88          ,d8  I8,        8        ,8I  88  888b      88    ,ad8888ba,   
+888b         d888        ,d888  `8b       d8b       d8'  88  8888b     88   d8"'    `"8b  
+88`8b       d8'88      ,d8" 88   "8,     ,8"8,     ,8"   88  88 `8b    88  d8'            
+88 `8b     d8' 88    ,d8"   88    Y8     8P Y8     8P    88  88  `8b   88  88             
+88  `8b   d8'  88  ,d8"     88    `8b   d8' `8b   d8'    88  88   `8b  88  88      88888  
+88   `8b d8'   88  8888888888888   `8a a8'   `8a a8'     88  88    `8b 88  Y8,        88  
+88    `888'    88           88      `8a8'     `8a8'      88  88     `8888   Y8a.    .a88  
+88     `8'     88           88       `8'       `8'       88  88      `888    `"Y88888P"   
+                                                                                          
+                                                                                          
 """
 
 
@@ -44,11 +49,11 @@ def get_api_id_and_hash():
         "Get your API ID and API HASH from my.telegram.org or @ScrapperRoBot to proceed.\n\n",
     )
     try:
-        API_ID = int(input("Please enter your API ID: "))
+        API_ID = int(input("ASUPKEUN API ID : "))
     except ValueError:
-        print("APP ID must be an integer.\nQuitting...")
+        print("APP ID na teu baleg.\nQuitting...")
         exit(0)
-    API_HASH = input("Please enter your API HASH: ")
+    API_HASH = input("Asupkeun API HASH: ")
     return API_ID, API_HASH
 
 
@@ -81,14 +86,14 @@ def telethon_session():
     # logging in
     try:
         with TelegramClient(StringSession(), API_ID, API_HASH) as ultroid:
-            print("Generating a string session for •ULTROID•")
+            print("Generating a string session for •M4WING•")
             try:
                 ultroid.send_message(
                     "me",
-                    f"**ULTROID** `SESSION`:\n\n`{ultroid.session.save()}`\n\n**Do not share this anywhere!**",
+                    f"**M4WING** `SESSION`:\n\n`{ultroid.session.save()}`\n\n**Do not share this anywhere!**",
                 )
                 print(
-                    "Your SESSION has been generated. Check your Telegram saved messages!"
+                    "SESSION na nggs jadi, sok cobaan di cek di PESAN TERSIMPAN!"
                 )
                 return
             except UserIsBotError:
@@ -151,7 +156,7 @@ def main():
     try:
         type_of_ss = int(
             input(
-                "\nUltroid supports both telethon as well as pyrogram sessions.\n\nWhich session do you want to generate?\n1. Telethon Session.\n2. Pyrogram Session.\n\nEnter choice:  "
+                "\nM4wing supports both telethon as well as pyrogram sessions.\n\nWhich session do you want to generate?\n1. Telethon Session.\n2. Pyrogram Session.\n\nEnter choice:  "
             )
         )
     except Exception as e:
@@ -163,7 +168,7 @@ def main():
         pyro_session()
     else:
         print("Invalid choice.")
-    x = input("Run again? (Y/n)")
+    x = input("Jalankeun deui? (Y/n)")
     if x.lower() in ["y", "yes"]:
         main()
     else:
